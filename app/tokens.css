@@ -1,0 +1,47 @@
+/* Hallmark · macrostructure: Portfolio Grid · theme: studied-DNA (source: Claude Design base + victoreke.com calibration)
+ * genre: editorial-dark · tone: técnico-cálido · accent: none (pixel art carries the only color)
+ * paper: oklch(19% 0.006 280) · ink: oklch(96% 0.004 90)
+ * fonts: Archivo (display) + Instrument Sans (body) + JetBrains Mono (data)
+ * studied: yes · DNA-source: url (victoreke.com → zinc-dark + noise + bold sans display; diegovz.com → experience timeline)
+ */
+
+:root {
+  /* ---- color ---------------------------------------------------- */
+  --paper: oklch(19% 0.006 280);          /* zinc-oscuro, ni #000 ni #0a0a0a plano */
+  --paper-raised: oklch(22% 0.006 280);   /* superficies elevadas (hover, covers) */
+  --ink: oklch(96% 0.004 90);             /* blanco cálido, nunca #fff */
+  --ink-dim: oklch(76% 0.004 90);         /* texto secundario — legible (≥7:1) */
+  --ink-mute: oklch(64% 0.004 90);        /* meta/labels pequeños (≥4.5:1) */
+  --ink-ghost: oklch(48% 0.004 90);       /* solo decorativo, nunca texto esencial */
+  --line: oklch(96% 0.004 90 / 0.11);     /* hairlines */
+  --line-strong: oklch(96% 0.004 90 / 0.24);
+
+  /* ---- espacio (escala 4pt) ------------------------------------- */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 20px;
+  --space-lg: 32px;
+  --space-xl: 56px;
+  --space-2xl: 96px;
+  --space-3xl: 144px;
+
+  /* ---- tipografía ----------------------------------------------- */
+  --text-display: clamp(2.75rem, 8vw, 6.5rem);
+  --text-title: clamp(1.75rem, 3.4vw, 2.75rem);
+  --text-sub: clamp(1.25rem, 2.2vw, 1.75rem);
+  --text-body: 0.975rem;
+  --text-small: 0.875rem;
+  --text-meta: 0.75rem;
+
+  /* ---- motion ---------------------------------------------------- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-short: 180ms;
+  --dur-med: 340ms;
+  --dur-long: 700ms;
+
+  /* ---- misc ------------------------------------------------------ */
+  --rule: 1px solid var(--line);
+  --content-max: 1200px;
+}
