@@ -1,4 +1,4 @@
-import { PixelFace } from "@/components/pixel-face";
+import Image from "next/image";
 
 export function Hero() {
   return (
@@ -21,20 +21,25 @@ export function Hero() {
             hasta que falta.
           </p>
         </div>
-        <div className="hero-rise-late flex flex-col items-center gap-4 justify-self-center md:justify-self-end">
+        <div className="hero-rise-late flex flex-col items-center justify-self-center md:justify-self-center">
           <div className="relative border border-line p-5">
-            <PixelFace size={200} className="floaty h-auto w-[clamp(150px,18vw,220px)]" />
+            <Image
+              src="/Gabriel.png"
+              alt="Pixel art de Gabriel Molina"
+              width={220}
+              height={220}
+              unoptimized
+              className="floaty h-auto w-[clamp(150px,18vw,220px)]"
+              style={{ imageRendering: "pixelated" }}
+              priority
+            />
             <span aria-hidden className="absolute -left-px -top-px h-2 w-2 border-l border-t border-ink" />
             <span aria-hidden className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-ink" />
           </div>
-          <span className="mono-label text-[10px]">
-            16 × 16 px · el único color del sitio
-          </span>
         </div>
       </div>
       <div className="hairline-t mt-16 flex items-end justify-between gap-6 pb-6 pt-4">
         <span className="mono-label">Baja para leer</span>
-        <span className="mono-label">MMXXVI</span>
       </div>
     </section>
   );

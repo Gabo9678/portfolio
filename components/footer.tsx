@@ -1,6 +1,5 @@
+import Image from "next/image";
 import { EMAIL } from "@/lib/data";
-import { Clock } from "./clock";
-import { PixelFace } from "./pixel-face";
 
 const LINKS = [
   { label: "GitHub", href: "https://github.com" },
@@ -28,7 +27,15 @@ export function Footer() {
               preguntas.
             </p>
           </div>
-          <PixelFace size={72} className="opacity-90" />
+          <Image
+            src="/Gabriel.png"
+            alt="Pixel art de Gabriel Molina"
+            width={96}
+            height={96}
+            unoptimized
+            className="opacity-90"
+            style={{ imageRendering: "pixelated" }}
+          />
         </div>
         <div className="hairline-t flex flex-wrap items-center justify-between gap-x-7 gap-y-4 pt-5">
           <nav aria-label="Enlaces externos" className="flex flex-wrap gap-6">
@@ -44,12 +51,6 @@ export function Footer() {
               </a>
             ))}
           </nav>
-          <span className="flex items-center gap-3">
-            <Clock />
-            <span className="font-mono text-[11px] tracking-[0.1em] text-ink-mute">
-              · hecho a mano
-            </span>
-          </span>
         </div>
       </div>
     </footer>
