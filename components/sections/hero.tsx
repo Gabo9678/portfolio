@@ -22,7 +22,7 @@ export function Hero() {
           </p>
         </div>
         <div className="hero-rise-late flex flex-col items-center justify-self-center md:justify-self-center">
-          <div className="relative border border-line p-5">
+          <div className="relative border border-line p-5 pr-10">
             <Image
               src="/Gabriel.png"
               alt="Pixel art de Gabriel Molina"

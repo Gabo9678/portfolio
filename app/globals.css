@@ -88,8 +88,8 @@ button:active {
 .hero-rise-late { animation: rise var(--dur-long) var(--ease-out) 120ms both; }
 
 @keyframes floaty {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
+  0%, 100% { transform: translateY(5px); }
+  50% { transform: translateY(-9px); }
 }
 .floaty { animation: floaty 7s var(--ease-in-out) infinite; }
 

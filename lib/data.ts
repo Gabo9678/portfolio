@@ -176,4 +176,4 @@ export const NAV_SECTIONS = [
   { id: "experiencia", label: "Experiencia" },
 ];
 
-export const EMAIL = "hola@gabrielmolina.dev";
+export const EMAIL = "molinagabriel9678@gmail.com";
