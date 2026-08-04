@@ -1,10 +1,10 @@
+import Image from "next/image";
 import { SectionHead } from "@/components/section-head";
 
-// Cifras placeholder — se cambian por las reales antes de publicar.
 const STATS = [
-  { num: "02", label: "años escribiendo interfaces" },
-  { num: "14", label: "proyectos en producción" },
-  { num: "05", label: "tecnologías de cada semana" },
+  { num: "1.5+", label: "años de experiencia frontend" },
+  { num: "02", label: "empresas del sector financiero" },
+  { num: "04+", label: "tecnologías clave (React, Next, Angular, MUI)" },
 ];
 
 export function About() {
@@ -13,34 +13,31 @@ export function About() {
       <SectionHead title="Sobre mí" />
       <div className="grid items-start gap-12 md:grid-cols-[minmax(200px,0.55fr)_1fr] md:gap-16">
         <figure className="m-0 flex flex-col gap-3">
-          {/* Retrato placeholder — se cambia por foto real en grises */}
           <div
-            aria-label="Retrato (placeholder)"
-            role="img"
-            className="grid aspect-4/5 w-full place-items-center border border-line bg-paper-raised"
+            aria-label="Foto de Gabriel Molina"
+            className="overflow-hidden border border-line bg-paper-raised"
           >
-            <span className="mono-label text-ink-ghost">foto pendiente</span>
+            <Image
+              src="/foto_carnet.jpg"
+              alt="Foto carnet de Gabriel Molina"
+              width={320}
+              height={400}
+              className="aspect-4/5 w-full object-cover"
+              priority
+            />
           </div>
           <figcaption className="mono-label text-[10px]">Caracas, 2026</figcaption>
         </figure>
         <div className="flex min-w-0 flex-col gap-10">
           <div className="flex max-w-[62ch] flex-col gap-5">
             <p className="text-(length:--text-sub) font-medium leading-snug tracking-[-0.01em] text-ink" style={{ textWrap: "pretty" }}>
-              Empecé maquetando la página de la panadería de mi tía y todavía no
-              me quito el vicio de acomodar cosas hasta que encajan.
+              Frontend Developer con un año y medio de experiencia construyendo soluciones web para el sector bancario y corporativo.
             </p>
             <p className="leading-[1.8] text-ink-mute" style={{ textWrap: "pretty" }}>
-              Llevo dos años trabajando en frontend: interfaces que cargan
-              rápido, se leen bien y no se rompen en el teléfono de nadie. Vengo
-              del lado del diseño, así que me obsesionan el tipo de letra, el
-              ritmo del espacio y esas transiciones de 200 ms que uno solo nota
-              cuando están mal.
+              Inicié mi trayectoria en el área de Banca Web del Banco Mercantil trabajando con Angular en el desarrollo del módulo de Clave C2P para la plataforma web de Mercantil en Línea Personas. Posteriormente ingresé a Atenea Mercantil como Analista de QA y di el paso a desarrollo Frontend con Next.js y Material UI (MUI).
             </p>
             <p className="leading-[1.8] text-ink-mute" style={{ textWrap: "pretty" }}>
-              Prefiero entender el problema antes de abrir el editor. Pregunto
-              mucho, borro más de lo que escribo y me llevo bien con la gente de
-              backend. Fuera de la pantalla: café colado, pixel art y caminar
-              sin rumbo por Los Palos Grandes.
+              Formé parte del equipo que desarrolló el portal en producción de MSFI (Mercantil Servicios Financieros Internacionales) y lideré la implementación frontend del proyecto MSF (Mercantil Servicios Financieros) sobre la misma arquitectura, proyecto ya finalizado a la espera de pase a producción. Me enfoco en maquetar prototipos de Figma a código impecable, responsive, con soporte de Modo Oscuro y consumo de CMS Headless.
             </p>
           </div>
           <dl className="hairline-t grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))]">

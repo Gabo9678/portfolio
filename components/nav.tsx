@@ -69,6 +69,15 @@ export function Nav() {
       <div className="mx-auto flex max-w-(--content-max) flex-wrap items-center justify-between gap-x-6 gap-y-1 px-5 py-3 sm:px-8">
         <Link
           href="/"
+          scroll={!isHome}
+          onClick={(e) => {
+            if (!isHome) return;
+            e.preventDefault();
+            const el = document.getElementById("inicio");
+            if (el) el.scrollIntoView({ behavior: "smooth" });
+            else window.scrollTo({ top: 0, behavior: "smooth" });
+            history.replaceState(null, "", "/");
+          }}
           className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink"
         >
           Gabriel Molina
@@ -78,6 +87,15 @@ export function Nav() {
             <Link
               key={s.id}
               href={`/#${s.id}`}
+              scroll={!isHome}
+              onClick={(e) => {
+                if (!isHome) return;
+                const el = document.getElementById(s.id);
+                if (!el) return;
+                e.preventDefault();
+                el.scrollIntoView({ behavior: "smooth" });
+                history.replaceState(null, "", `/#${s.id}`);
+              }}
               className="link-quiet flex items-center gap-2 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.1em]"
             >
               {isHome && <Ring progress={progress[i]} />}

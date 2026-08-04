@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState, type RefObject } from "react";
 import { JOBS, type Job } from "@/lib/data";
 import { SectionHead } from "@/components/section-head";
@@ -91,11 +92,21 @@ function Row({ job, index }: { job: Job; index: number }) {
       <div className="col-start-1 row-start-1 sm:col-start-2">
         <div
           aria-hidden
-          className={`flex h-11 w-11 items-center justify-center border border-line-strong bg-paper-raised font-mono text-[11px] font-bold tracking-[0.08em] text-ink-dim transition-[opacity,transform] duration-500 ease-out ${
+          className={`flex h-11 w-11 items-center justify-center border border-line-strong bg-paper-raised font-mono text-[11px] font-bold tracking-[0.08em] text-ink-dim transition-[opacity,transform] duration-500 ease-out overflow-hidden ${
             shown ? "scale-100 opacity-100" : "scale-90 opacity-0"
           }`}
         >
-          {monogram(job.company)}
+          {job.logo ? (
+            <Image
+              src={job.logo}
+              alt={job.company}
+              width={44}
+              height={44}
+              className="h-full w-full object-cover"
+            />
+          ) : (
+            monogram(job.company)
+          )}
         </div>
       </div>
 
