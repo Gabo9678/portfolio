@@ -1,5 +1,6 @@
 // Datos reales de Gabriel Molina extraídos de audios de voz
-export type Project = {
+
+export type Project = {
   slug: string;
   name: string;
   year: string;
@@ -69,19 +70,6 @@ export type Job = {
 
 export const JOBS: Job[] = [
   {
-    period: "2026",
-    place: "Caracas, VE",
-    role: "Frontend Developer (ex QA)",
-    company: "Atenea Mercantil",
-    logo: "/atenea_mercantil_logo.webp",
-    points: [
-      "Lideré el desarrollo frontend del nuevo portal corporativo MSF (Mercantil Servicios Financieros), adaptando el rediseño de componentes sobre la arquitectura previa de MSFI (proyecto culminado, listo para producción).",
-      "Participé como Frontend Developer Jr. en la construcción del portal MSFI (Mercantil Servicios Financieros Internacionales), activo en producción.",
-      "Desarrollé componentes responsive en Next.js y Material UI (MUI), maquetando prototipos desde Figma e implementando Modo Oscuro.",
-      "Inicié en la empresa como Analista de QA y transicioné a desarrollo Frontend, aportando un fuerte enfoque en calidad de software y prevención de errores.",
-    ],
-  },
-  {
     period: "2025",
     place: "Caracas, VE",
     role: "Frontend Developer (Pasante)",
@@ -91,6 +79,19 @@ export const JOBS: Job[] = [
       "Desarrollé en la plataforma web de Mercantil en Línea Personas el módulo de generación de Clave C2P para cobros y pagos a comercios afiliados.",
       "Reutilicé y adapté la librería de componentes existente en la banca en línea e integré las APIs probadas previamente en Postman.",
       "Implementé el mapeo de datos transaccionales, manejo de errores en tiempo real y vistas de contingencia/error en Angular.",
+    ],
+  },
+    {
+    period: "2026",
+    place: "Caracas, VE",
+    role: "Frontend Developer",
+    company: "Atenea Mercantil",
+    logo: "/atenea_mercantil_logo.webp",
+    points: [
+      "Lideré el desarrollo frontend del nuevo portal corporativo MSF (Mercantil Servicios Financieros), adaptando el rediseño de componentes sobre la arquitectura previa de MSFI (proyecto culminado, listo para producción).",
+      "Participé como Frontend Developer Jr. en la construcción del portal MSFI (Mercantil Servicios Financieros Internacionales), activo en producción.",
+      "Desarrollé componentes responsive en Next.js y Material UI (MUI), maquetando prototipos desde Figma e implementando Modo Oscuro.",
+      "Inicié en la empresa como Analista de QA y transicioné a desarrollo Frontend, aportando un fuerte enfoque en calidad de software y prevención de errores.",
     ],
   },
 ];

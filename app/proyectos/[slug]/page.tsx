@@ -48,7 +48,7 @@ export default async function ProjectPage(props: PageProps<"/proyectos/[slug]">)
         </p>
       </header>
 
-      <dl className="hairline-b m-0 grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-7 py-8">
+      <dl className="fx hairline-b m-0 grid grid-cols-[repeat(auto-fit,minmax(170px,1fr))] gap-7 py-8">
         <div className="flex flex-col gap-2">
           <dt className="mono-label text-[10px]">Rol</dt>
           <dd className="m-0 text-[15px] text-ink-dim">{project.role}</dd>
@@ -69,7 +69,7 @@ export default async function ProjectPage(props: PageProps<"/proyectos/[slug]">)
         </div>
       </dl>
 
-      <div className="grid gap-8 py-12 md:grid-cols-[minmax(180px,0.45fr)_1fr] md:gap-14">
+      <div className="fx grid gap-8 py-12 md:grid-cols-[minmax(180px,0.45fr)_1fr] md:gap-14">
         <span className="mono-label">El problema y qué hice</span>
         <div className="flex max-w-[64ch] flex-col gap-5">
           {project.body.map((par) => (
@@ -85,7 +85,7 @@ export default async function ProjectPage(props: PageProps<"/proyectos/[slug]">)
       ) : (
         <div className="flex flex-col gap-10">
           {[0, 1].map((i) => (
-            <figure key={i} className="m-0 flex flex-col gap-3">
+            <figure key={i} className="fx m-0 flex flex-col gap-3">
               <div className="overflow-hidden border border-line">
                 <ProjectCover variant={project.coverVariant + i} />
               </div>
@@ -99,7 +99,7 @@ export default async function ProjectPage(props: PageProps<"/proyectos/[slug]">)
 
       <Link
         href={`/proyectos/${next.slug}`}
-        className="hairline-t group mt-20 flex flex-wrap items-baseline justify-between gap-4 pt-6"
+        className="fx hairline-t group mt-20 flex flex-wrap items-baseline justify-between gap-4 pt-6"
       >
         <span className="mono-label transition-colors duration-(--dur-short) group-hover:text-ink">
           Siguiente caso

@@ -7,7 +7,9 @@ export function Projects() {
   return (
     <section id="proyectos" className="mx-auto max-w-(--content-max) scroll-mt-24 px-5 py-14 sm:px-8 sm:py-18">
       <SectionHead title="Proyectos" />
-      <ul className="grid list-none grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-px border border-line bg-line p-0">
+      {/* la clase fx va en el ul, no en cada li: una tarjeta a opacity 0 dejaría
+          asomar el bg-line que hace de separador entre celdas */}
+      <ul className="fx grid list-none grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-px border border-line bg-line p-0">
         {PROJECTS.map((p) => (
           <li key={p.slug} className="min-w-0">
             <Link

@@ -11,9 +11,9 @@ export function Footer() {
   return (
     <footer className="hairline-t px-5 pb-10 pt-16 sm:px-8">
       <div className="mx-auto flex max-w-(--content-max) flex-col gap-12">
-        <div className="flex flex-wrap items-end justify-between gap-10">
+        <div className="fx flex flex-wrap items-end justify-between gap-10">
           <div className="flex min-w-0 flex-col gap-4">
-            <span className="mono-label">Escríbeme</span>
+            <span className="mono-label">Contacto</span>
             <a
               href={`mailto:${EMAIL}`}
               className="min-w-0 break-all font-display text-[clamp(1.6rem,5.2vw,4.25rem)] font-bold leading-none tracking-tight text-ink transition-opacity duration-(--dur-med) hover:opacity-60"
@@ -22,9 +22,7 @@ export function Footer() {
               {EMAIL}
             </a>
             <p className="max-w-[46ch] text-[15px] leading-relaxed text-ink-mute" style={{ textWrap: "pretty" }}>
-              Si tienes algo entre manos y quieres que alguien lo construya con
-              cuidado, cuéntamelo. Respondo el mismo día, casi siempre con
-              preguntas.
+              Estoy abierto a nuevas oportunidades, si tienes una idea o proyecto en mente, no dudes en ponerte en contacto conmigo!
             </p>
           </div>
           <Image

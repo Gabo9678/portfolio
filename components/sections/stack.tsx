@@ -10,7 +10,7 @@ export function Stack() {
         {STACK.map((t) => (
           <li
             key={t.name}
-            className="hairline-b grid grid-cols-[32px_1fr] items-center gap-x-4 gap-y-1 px-1 py-5 transition-colors duration-(--dur-med) ease-(--ease-out) hover:bg-paper-raised sm:grid-cols-[36px_minmax(180px,260px)_1fr] sm:gap-5 sm:py-6"
+            className="fx hairline-b grid grid-cols-[32px_1fr] items-center gap-x-4 gap-y-1 px-1 py-5 transition-colors duration-(--dur-med) ease-(--ease-out) hover:bg-paper-raised sm:grid-cols-[36px_minmax(180px,260px)_1fr] sm:gap-5 sm:py-6"
           >
             <StackIcon name={t.icon} />
             <h3 className="font-display text-[clamp(1.2rem,2.6vw,1.9rem)] font-bold leading-none tracking-tight text-ink">

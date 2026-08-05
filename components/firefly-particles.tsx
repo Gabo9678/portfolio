@@ -12,7 +12,7 @@ type Particle = {
   speed: number;
 };
 
-const COUNT = 26;
+const COUNT = 48;
 
 export function FireflyParticles({ className = "" }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -35,9 +35,9 @@ export function FireflyParticles({ className = "" }: { className?: string }) {
     const makeParticle = (): Particle => ({
       x: Math.random() * width,
       y: Math.random() * height,
-      r: 1 + Math.random() * 1.6,
-      vx: (Math.random() - 0.5) * 0.12,
-      vy: (Math.random() - 0.5) * 0.12,
+      r: 0.7 + Math.random() * 1.1,
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
       phase: Math.random() * Math.PI * 2,
       speed: 0.006 + Math.random() * 0.01,
     });

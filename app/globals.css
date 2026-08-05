@@ -18,6 +18,7 @@
 
 html {
   overflow-x: clip;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -104,8 +105,38 @@ button:active {
 }
 .bounce-down { display: inline-flex; animation: bounce-down 1.8s var(--ease-in-out) infinite; }
 
+/* ---- .fx · entrada ligada al scroll ------------------------------
+   Slide + zoom + fade a la vez, al estilo del primitivo Effect de animate-ui.
+   No es un disparo: el progreso lo marca la posición del elemento en la
+   ventana, así que avanza y retrocede con el scroll.
+
+   Mejora progresiva: los keyframes solo se aplican dentro del @supports, así
+   que donde no hay scroll-driven animations (Firefox estable a 08/2026) el
+   contenido se ve en su estado final, nunca oculto. */
+@keyframes fx-enter {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@supports (animation-timeline: view()) {
+  .fx {
+    animation: fx-enter linear both;
+    animation-timeline: view();
+    /* empieza en cuanto asoma por abajo y termina antes del centro de la
+       ventana: se lee ya nítido mientras sigue subiendo */
+    animation-range: entry 10% cover 35%;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .hero-rise, .hero-rise-late { animation-duration: 1ms; }
-  .floaty, .blink, .bounce-down { animation: none; }
+  .floaty, .blink, .bounce-down, .fx { animation: none; }
   *, *::before, *::after { transition-duration: 1ms !important; }
 }
