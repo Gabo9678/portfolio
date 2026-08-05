@@ -1,9 +1,12 @@
 import Image from "next/image";
+import { FireflyParticles } from "@/components/firefly-particles";
+import { PixelSpeechBubble } from "@/components/pixel-speech-bubble";
 
 export function Hero() {
   return (
-    <section id="inicio" className="mx-auto max-w-(--content-max) scroll-mt-24 px-5 pb-14 pt-28 sm:px-8 sm:pt-36">
-      <div className="grid items-center gap-12 md:grid-cols-[1.25fr_auto]">
+    <section id="inicio" className="relative mx-auto max-w-(--content-max) scroll-mt-24 px-5 pb-14 pt-28 sm:px-8 sm:pt-36">
+      <FireflyParticles />
+      <div className="relative grid items-center gap-12 md:grid-cols-[1.25fr_auto]">
         <div className="hero-rise flex min-w-0 flex-col gap-6">
           <h1
             className="font-display text-(length:--text-display) font-bold leading-[0.95] tracking-[-0.03em] text-ink"
@@ -21,24 +24,27 @@ export function Hero() {
           </p>
         </div>
         <div className="hero-rise-late flex flex-col items-center justify-self-center md:justify-self-center">
-          <div className="relative border border-line p-5 pr-10">
+          <div className="floaty relative">
+            <PixelSpeechBubble className="absolute top-8 left-8 w-40 translate-x-[-38%]" />
             <Image
               src="/Gabriel.png"
               alt="Pixel art de Gabriel Molina"
               width={220}
               height={220}
               unoptimized
-              className="floaty h-auto w-[clamp(150px,18vw,220px)]"
+              className="h-auto w-[clamp(150px,18vw,220px)]"
               style={{ imageRendering: "pixelated" }}
               priority
             />
-            <span aria-hidden className="absolute -left-px -top-px h-2 w-2 border-l border-t border-ink" />
-            <span aria-hidden className="absolute -bottom-px -right-px h-2 w-2 border-b border-r border-ink" />
           </div>
         </div>
       </div>
-      <div className="hairline-t mt-16 flex items-end justify-between gap-6 pb-6 pt-4">
-        <span className="mono-label">Baja para leer</span>
+      <div className="hairline-t mt-16 flex items-center justify-center pb-6 pt-4">
+        <span aria-hidden className="bounce-down text-ink-mute">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M9 3v11M4 9.5 9 14.5 14 9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </span>
       </div>
     </section>
   );

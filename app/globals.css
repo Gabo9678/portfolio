@@ -98,8 +98,14 @@ button:active {
 }
 .blink { animation: blink 2.4s steps(1) infinite; }
 
+@keyframes bounce-down {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+.bounce-down { display: inline-flex; animation: bounce-down 1.8s var(--ease-in-out) infinite; }
+
 @media (prefers-reduced-motion: reduce) {
   .hero-rise, .hero-rise-late { animation-duration: 1ms; }
-  .floaty, .blink { animation: none; }
+  .floaty, .blink, .bounce-down { animation: none; }
   *, *::before, *::after { transition-duration: 1ms !important; }
 }

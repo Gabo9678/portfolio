@@ -9,7 +9,7 @@ const STATS = [
 
 export function About() {
   return (
-    <section id="sobre" className="mx-auto max-w-(--content-max) scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
+    <section id="sobre" className="mx-auto max-w-(--content-max) scroll-mt-24 px-5 py-14 sm:px-8 sm:py-18">
       <SectionHead title="Sobre mí" />
       <div className="grid items-start gap-12 md:grid-cols-[minmax(200px,0.55fr)_1fr] md:gap-16">
         <figure className="m-0 flex flex-col gap-3">
@@ -37,7 +37,7 @@ export function About() {
               Inicié mi trayectoria en el área de Banca Web del Banco Mercantil trabajando con Angular en el desarrollo del módulo de Clave C2P para la plataforma web de Mercantil en Línea Personas. Posteriormente ingresé a Atenea Mercantil como Analista de QA y di el paso a desarrollo Frontend con Next.js y Material UI (MUI).
             </p>
             <p className="leading-[1.8] text-ink-mute" style={{ textWrap: "pretty" }}>
-              Formé parte del equipo que desarrolló el portal en producción de MSFI (Mercantil Servicios Financieros Internacionales) y lideré la implementación frontend del proyecto MSF (Mercantil Servicios Financieros) sobre la misma arquitectura, proyecto ya finalizado a la espera de pase a producción. Me enfoco en maquetar prototipos de Figma a código impecable, responsive, con soporte de Modo Oscuro y consumo de CMS Headless.
+              Formé parte del equipo que desarrolló el portal en producción de MSFI (Mercantil Servicios Financieros Internacionales) y lideré la implementación frontend del proyecto MSF (Mercantil Servicios Financieros) sobre la misma arquitectura, aplicando rediseño en diferentes componentes.
             </p>
           </div>
           <dl className="hairline-t grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))]">

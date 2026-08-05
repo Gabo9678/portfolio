@@ -5,7 +5,7 @@ import { SectionHead } from "@/components/section-head";
 
 export function Projects() {
   return (
-    <section id="proyectos" className="mx-auto max-w-(--content-max) scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
+    <section id="proyectos" className="mx-auto max-w-(--content-max) scroll-mt-24 px-5 py-14 sm:px-8 sm:py-18">
       <SectionHead title="Proyectos" />
       <ul className="grid list-none grid-cols-[repeat(auto-fit,minmax(290px,1fr))] gap-px border border-line bg-line p-0">
         {PROJECTS.map((p) => (

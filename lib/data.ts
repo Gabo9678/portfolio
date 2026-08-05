@@ -8,6 +8,7 @@
   stack: string[];
   body: string[];
   coverVariant: number;
+  screenshots?: string[];
 };
 
 export const PROJECTS: Project[] = [
@@ -24,6 +25,7 @@ export const PROJECTS: Project[] = [
       "El proyecto se encuentra totalmente culminado y listo a la espera del despliegue oficial a producción.",
     ],
     coverVariant: 0,
+    screenshots: ["/msf-one.webp", "/msf-two.webp", "/msf-three.webp"],
   },
   {
     slug: "msfi-mercantil",
@@ -38,6 +40,7 @@ export const PROJECTS: Project[] = [
       "Conecté componentes con el backend mediante un Headless CMS y colaboré estrechamente en el control de calidad previo al lanzamiento a producción.",
     ],
     coverVariant: 1,
+    screenshots: ["/msfi-one.webp", "/MSFI-two.webp", "/msfi-three.webp"],
   },
   {
     slug: "clave-c2p-banca-web",

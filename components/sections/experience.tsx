@@ -163,7 +163,7 @@ export function Experience() {
   const fill = useRailFill(railRef);
 
   return (
-    <section id="experiencia" className="mx-auto max-w-(--content-max) scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
+    <section id="experiencia" className="mx-auto max-w-(--content-max) scroll-mt-24 px-5 py-14 sm:px-8 sm:py-18">
       <SectionHead title="Experiencia" />
       <div ref={railRef} className="relative">
         {/* riel guía */}

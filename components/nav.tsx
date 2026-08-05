@@ -34,7 +34,12 @@ export function Nav() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [progress, setProgress] = useState<number[]>(() => NAV_SECTIONS.map(() => 0));
+  const [menuOpen, setMenuOpen] = useState(false);
   const raf = useRef<number | null>(null);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     if (!isHome) return;
@@ -64,38 +69,35 @@ export function Nav() {
     };
   }, [isHome]);
 
+  const goTo = (id: string) => (e: React.MouseEvent) => {
+    if (!isHome) return;
+    e.preventDefault();
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+    else window.scrollTo({ top: 0, behavior: "smooth" });
+    history.replaceState(null, "", id === "inicio" ? "/" : `/#${id}`);
+    setMenuOpen(false);
+  };
+
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-paper/75 backdrop-blur-md">
-      <div className="mx-auto flex max-w-(--content-max) flex-wrap items-center justify-between gap-x-6 gap-y-1 px-5 py-3 sm:px-8">
+      <div className="mx-auto flex max-w-(--content-max) items-center justify-between gap-x-6 px-5 py-3 sm:px-8">
         <Link
           href="/"
           scroll={!isHome}
-          onClick={(e) => {
-            if (!isHome) return;
-            e.preventDefault();
-            const el = document.getElementById("inicio");
-            if (el) el.scrollIntoView({ behavior: "smooth" });
-            else window.scrollTo({ top: 0, behavior: "smooth" });
-            history.replaceState(null, "", "/");
-          }}
+          onClick={goTo("inicio")}
           className="font-mono text-[11px] uppercase tracking-[0.14em] text-ink"
         >
           Gabriel Molina
         </Link>
-        <nav aria-label="Secciones" className="order-last flex w-full items-center gap-x-5 gap-y-1 overflow-x-auto py-1 sm:order-none sm:w-auto sm:gap-6 sm:overflow-visible sm:py-0">
+
+        <nav aria-label="Secciones" className="hidden items-center gap-6 sm:flex">
           {NAV_SECTIONS.map((s, i) => (
             <Link
               key={s.id}
               href={`/#${s.id}`}
               scroll={!isHome}
-              onClick={(e) => {
-                if (!isHome) return;
-                const el = document.getElementById(s.id);
-                if (!el) return;
-                e.preventDefault();
-                el.scrollIntoView({ behavior: "smooth" });
-                history.replaceState(null, "", `/#${s.id}`);
-              }}
+              onClick={goTo(s.id)}
               className="link-quiet flex items-center gap-2 whitespace-nowrap font-mono text-[11px] uppercase tracking-[0.1em]"
             >
               {isHome && <Ring progress={progress[i]} />}
@@ -103,8 +105,46 @@ export function Nav() {
             </Link>
           ))}
         </nav>
-        <Clock className="hidden md:inline-flex" />
+
+        <div className="flex items-center gap-4">
+          <Clock className="hidden md:inline-flex" />
+          <button
+            type="button"
+            aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((v) => !v)}
+            className="flex h-8 w-8 flex-none flex-col items-center justify-center gap-1.25 sm:hidden"
+          >
+            <span
+              aria-hidden
+              className={`h-px w-5 bg-ink transition-transform duration-(--dur-short) ${menuOpen ? "translate-y-0.75 rotate-45" : ""}`}
+            />
+            <span
+              aria-hidden
+              className={`h-px w-5 bg-ink transition-transform duration-(--dur-short) ${menuOpen ? "-translate-y-0.75 -rotate-45" : ""}`}
+            />
+          </button>
+        </div>
       </div>
+
+      {menuOpen && (
+        <nav
+          aria-label="Secciones"
+          className="hairline-t flex flex-col gap-1 bg-paper px-5 pb-4 pt-2 sm:hidden"
+        >
+          {NAV_SECTIONS.map((s) => (
+            <Link
+              key={s.id}
+              href={`/#${s.id}`}
+              scroll={!isHome}
+              onClick={goTo(s.id)}
+              className="link-quiet flex items-center py-2.5 font-mono text-[12px] uppercase tracking-widest"
+            >
+              {s.label}
+            </Link>
+          ))}
+        </nav>
+      )}
     </header>
   );
 }

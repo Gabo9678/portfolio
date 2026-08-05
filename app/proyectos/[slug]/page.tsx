@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PROJECTS } from "@/lib/data";
 import { ProjectCover } from "@/components/project-cover";
+import { ProjectCarousel } from "@/components/project-carousel";
 
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
@@ -79,18 +80,22 @@ export default async function ProjectPage(props: PageProps<"/proyectos/[slug]">)
         </div>
       </div>
 
-      <div className="flex flex-col gap-10">
-        {[0, 1].map((i) => (
-          <figure key={i} className="m-0 flex flex-col gap-3">
-            <div className="overflow-hidden border border-line">
-              <ProjectCover variant={project.coverVariant + i} />
-            </div>
-            <figcaption className="mono-label text-[10px]">
-              Captura {String(i + 1).padStart(2, "0")} · placeholder
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      {project.screenshots ? (
+        <ProjectCarousel images={project.screenshots} alt={project.name} />
+      ) : (
+        <div className="flex flex-col gap-10">
+          {[0, 1].map((i) => (
+            <figure key={i} className="m-0 flex flex-col gap-3">
+              <div className="overflow-hidden border border-line">
+                <ProjectCover variant={project.coverVariant + i} />
+              </div>
+              <figcaption className="mono-label text-[10px]">
+                Captura {String(i + 1).padStart(2, "0")} · placeholder
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      )}
 
       <Link
         href={`/proyectos/${next.slug}`}

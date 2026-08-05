@@ -4,7 +4,7 @@ import { SectionHead } from "@/components/section-head";
 
 export function Stack() {
   return (
-    <section id="stack" className="mx-auto max-w-(--content-max) scroll-mt-24 px-5 py-20 sm:px-8 sm:py-28">
+    <section id="stack" className="mx-auto max-w-(--content-max) scroll-mt-24 px-5 py-14 sm:px-8 sm:py-18">
       <SectionHead title="Stack" />
       <ul className="m-0 list-none p-0">
         {STACK.map((t) => (
