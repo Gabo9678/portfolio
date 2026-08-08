@@ -7,11 +7,12 @@ export function Hero() {
   return (
     <section
       id="inicio"
-      className="relative mx-auto flex min-h-[100svh] max-w-(--content-max) scroll-mt-24 flex-col px-5 pb-10 pt-28 sm:px-8 sm:pt-36"
+      className="relative flex w-full scroll-mt-24 flex-col overflow-hidden"
     >
       <FireflyParticles />
-      <div className="relative mb-16 grid items-center gap-12 md:grid-cols-[1.25fr_auto]">
-        <div className="hero-rise flex min-w-0 flex-col gap-6">
+      <div className="mx-auto flex w-full max-w-(--content-max) flex-col px-5 pb-2 pt-24 sm:px-8 sm:pt-28">
+        <div className="relative mb-10 grid items-center gap-12 md:grid-cols-[1.25fr_auto]">
+          <div className="hero-rise flex min-w-0 flex-col gap-6">
           <h1
             className="font-display text-(length:--text-display) font-bold leading-[0.95] tracking-[-0.03em] text-ink"
             style={{ overflowWrap: "anywhere" }}
@@ -23,8 +24,13 @@ export function Hero() {
           <p className="font-mono text-[13px] leading-relaxed tracking-[0.02em] text-ink-dim">
             Frontend Developer — 1.5+ años de experiencia
           </p>
-          <p className="max-w-[44ch] text-[15.5px] leading-relaxed text-ink-mute" style={{ textWrap: "pretty" }}>
-            Especializado en React, Next.js y Angular. Construyo interfaces web escalables, accesibles y optimizadas para producción en el sector financiero y corporativo.
+          <p
+            className="max-w-[44ch] text-[15.5px] leading-relaxed text-ink-mute"
+            style={{ textWrap: "pretty" }}
+          >
+            Especializado en React, Next.js y Angular. Construyo interfaces web
+            escalables, accesibles y optimizadas para producción en el sector
+            financiero y corporativo.
           </p>
           <div className="mt-2 flex flex-wrap items-center gap-3">
             <a
@@ -40,7 +46,13 @@ export function Hero() {
                 fill="none"
                 className="flex-none transition-transform duration-(--dur-short) group-hover:translate-y-0.5"
               >
-                <path d="M9 3v11M4 9.5 9 14.5 14 9.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M9 3v11M4 9.5 9 14.5 14 9.5"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </a>
             <a
@@ -56,7 +68,13 @@ export function Hero() {
                 fill="none"
                 className="flex-none transition-transform duration-(--dur-short) group-hover:translate-x-0.5"
               >
-                <path d="M4 9h10M9.5 4.5 14 9l-4.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                <path
+                  d="M4 9h10M9.5 4.5 14 9l-4.5 4.5"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
               </svg>
             </a>
           </div>
@@ -81,12 +99,19 @@ export function Hero() {
           </div>
         </div>
       </div>
-      <div className="hairline-t mt-auto flex items-center justify-center pb-2 pt-4">
+      <div className="hairline-t mt-8 flex items-center justify-center pb-2 pt-4">
         <span aria-hidden className="bounce-down text-ink-mute">
           <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-            <path d="M9 3v11M4 9.5 9 14.5 14 9.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            <path
+              d="M9 3v11M4 9.5 9 14.5 14 9.5"
+              stroke="currentColor"
+              strokeWidth="1.6"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </span>
+      </div>
       </div>
     </section>
   );

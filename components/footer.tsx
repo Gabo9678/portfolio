@@ -11,7 +11,7 @@ export function Footer() {
   return (
     <footer className="hairline-t px-5 pb-10 pt-16 sm:px-8">
       <div className="mx-auto flex max-w-(--content-max) flex-col gap-12">
-        <div className="fx flex flex-wrap items-end justify-between gap-10">
+        <div className="flex flex-wrap items-end justify-between gap-10">
           <div className="flex min-w-0 flex-col gap-4">
             <span className="mono-label">Contacto</span>
             <a
